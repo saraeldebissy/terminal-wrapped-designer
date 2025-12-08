@@ -1,0 +1,23 @@
+{
+  "name": "terminal-wrapped",
+  "version": "0.1.0",
+  "bin": {
+    "terminal-wrapped": "bin/terminal-wrapped"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ./scripts/copy-web-build.mjs"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "express": "^4.19.0",
+    "open": "^9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.0"
+  }
+}
