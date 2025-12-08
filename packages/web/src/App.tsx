@@ -7,10 +7,12 @@ import { LayoutShell } from './components/layout/LayoutShell';
 import { Section } from './components/layout/Section';
 import { HeroSummary } from './components/summary/HeroSummary';
 import { HighlightsSection } from './components/summary/HighlightsSection';
+import { SecretsSection } from './components/summary/SecretsSection';
 import { TopCommandsBarChart } from './components/charts/TopCommandsBarChart';
 import { HourlyPatternBarChart } from './components/charts/HourlyPatternBarChart';
 import { CategoryBarChart } from './components/charts/CategoryBarChart';
 import { ActivityHeatmap } from './components/charts/ActivityHeatmap';
+import { ParameterStatsChart } from './components/charts/ParameterStatsChart';
 
 function App() {
   const { stats, loading, error } = useStats();
@@ -47,6 +49,7 @@ function App() {
   // Check if we have time-based data
   const hasTimeData = stats.activityByDay.length > 0;
   const hasHourlyData = stats.activityByHour.some(h => h.count > 0);
+  const hasParameters = stats.parameters.topFlags.length > 0 || stats.parameters.commandFlagCombos.length > 0;
 
   return (
     <LayoutShell>
@@ -64,6 +67,17 @@ function App() {
       >
         <TopCommandsBarChart commands={stats.topCommands} maxItems={10} />
       </Section>
+
+      {/* Favorite Flags */}
+      {hasParameters && (
+        <Section
+          id="flags"
+          title="Your Favorite Flags"
+          subtitle="The options and arguments you use most"
+        >
+          <ParameterStatsChart parameters={stats.parameters} />
+        </Section>
+      )}
 
       {/* Activity Section */}
       {hasTimeData && (
@@ -105,15 +119,23 @@ function App() {
         </Section>
       )}
 
-      {/* Highlights & Streaks */}
+      {/* Secrets Detection */}
+      <Section
+        id="secrets"
+        title="Secrets Exposed"
+        subtitle="Credentials that might be in your shell history"
+      >
+        <SecretsSection secrets={stats.secrets} />
+      </Section>
+
+      {/* Highlights */}
       <Section
         id="highlights"
-        title="Highlights & Streaks"
+        title="Highlights"
         subtitle="Your terminal achievements"
       >
         <HighlightsSection
           highlights={stats.highlights}
-          streaks={stats.streaks}
           quirky={stats.quirky}
         />
       </Section>

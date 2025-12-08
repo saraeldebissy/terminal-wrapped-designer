@@ -8,7 +8,8 @@ import { aggregateCommands } from './aggregates/commands';
 import { aggregateCategories } from './aggregates/categories';
 import { aggregateActivityByDay, aggregateActivityByHour, getDateRange } from './aggregates/timeseries';
 import { aggregateDirectories } from './aggregates/directories';
-import { calculateStreaks } from './aggregates/streaks';
+import { aggregateParameters } from './aggregates/parameters';
+import { aggregateSecrets } from './aggregates/secrets';
 import { aggregateQuirky } from './aggregates/quirky';
 import { generateHighlights } from './highlights';
 
@@ -40,7 +41,8 @@ export function calculateStats(
   const activityByDay = aggregateActivityByDay(filteredEvents);
   const activityByHour = aggregateActivityByHour(filteredEvents);
   const topDirectories = aggregateDirectories(filteredEvents);
-  const streaks = calculateStreaks(activityByDay);
+  const parameters = aggregateParameters(filteredEvents);
+  const secrets = aggregateSecrets(filteredEvents);
   const quirky = aggregateQuirky(filteredEvents);
 
   // Get date range
@@ -65,7 +67,7 @@ export function calculateStats(
     },
     topCommands,
     activityByHour,
-    streaks,
+    secrets,
     quirky,
   };
 
@@ -81,7 +83,8 @@ export function calculateStats(
     activityByDay,
     activityByHour,
     topDirectories,
-    streaks,
+    parameters,
+    secrets,
     quirky,
     highlights,
   };
@@ -128,4 +131,4 @@ function filterByDate(
 }
 
 // Re-export types
-export type { Stats, StatsMeta, TopCommand, TopFullCommand, Category, DayActivity, HourActivity, TopDirectory, Streaks, QuirkyStats, Highlight } from './models';
+export type { Stats, StatsMeta, TopCommand, TopFullCommand, Category, DayActivity, HourActivity, TopDirectory, ParameterStats, SecretsStats, SecretMatch, QuirkyStats, Highlight } from './models';

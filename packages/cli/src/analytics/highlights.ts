@@ -75,13 +75,13 @@ export function generateHighlights(stats: Partial<Stats>): Highlight[] {
     }
   }
 
-  // Streak hero
-  if (stats.streaks && stats.streaks.longestStreakDays >= 7) {
+  // Secrets exposed warning
+  if (stats.secrets && stats.secrets.totalSecretsFound > 0) {
     highlights.push({
-      id: 'streak-hero',
-      title: 'Streak Hero',
-      description: `You had a **${stats.streaks.longestStreakDays}-day** streak of terminal activity. Respect.`,
-      iconKey: 'flame',
+      id: 'secrets-exposed',
+      title: 'Secrets Spotter',
+      description: `Found **${stats.secrets.totalSecretsFound}** potential secret(s) in your history. Time to rotate those keys!`,
+      iconKey: 'alert',
     });
   }
 

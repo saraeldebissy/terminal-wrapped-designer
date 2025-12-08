@@ -1,14 +1,13 @@
 /**
- * Highlights and streaks section
+ * Highlights section
  */
 
 import { motion } from 'motion/react';
-import type { Highlight, Streaks, QuirkyStats } from '../../api/types';
+import type { Highlight, QuirkyStats } from '../../api/types';
 import { StaggeredList, StaggeredItem } from '../motion/StaggeredList';
 
 export interface HighlightsSectionProps {
   highlights: Highlight[];
-  streaks: Streaks;
   quirky: QuirkyStats;
 }
 
@@ -23,53 +22,15 @@ const iconMap: Record<string, string> = {
   'check-circle': '✅',
   layers: '📚',
   zap: '⚡',
+  alert: '⚠️',
 };
 
 export function HighlightsSection({
   highlights,
-  streaks,
   quirky,
 }: HighlightsSectionProps) {
   return (
     <div className="space-y-8">
-      {/* Streaks */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <motion.div
-          className="bg-slate-800/30 backdrop-blur-md border border-slate-700/50 rounded-xl p-6"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-2xl">🔥</span>
-            <span className="text-sm uppercase tracking-wider text-slate-400">
-              Longest Streak
-            </span>
-          </div>
-          <p className="text-4xl font-bold text-primary">
-            {streaks.longestStreakDays} days
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="bg-slate-800/30 backdrop-blur-md border border-slate-700/50 rounded-xl p-6"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-2xl">📅</span>
-            <span className="text-sm uppercase tracking-wider text-slate-400">
-              Current Streak
-            </span>
-          </div>
-          <p className="text-4xl font-bold text-secondary">
-            {streaks.currentStreakDays} days
-          </p>
-        </motion.div>
-      </div>
-
       {/* Highlights */}
       {highlights.length > 0 && (
         <StaggeredList className="grid grid-cols-1 md:grid-cols-2 gap-4">

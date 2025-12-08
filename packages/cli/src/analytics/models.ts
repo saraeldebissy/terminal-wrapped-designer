@@ -75,11 +75,37 @@ export interface TopDirectory {
   count: number;
 }
 
-export interface Streaks {
-  /** Longest consecutive days with terminal activity */
-  longestStreakDays: number;
-  /** Current streak (ending on last active day) */
-  currentStreakDays: number;
+export interface ParameterStats {
+  /** Most used flags across all commands */
+  topFlags: {
+    flag: string;
+    count: number;
+    commands: string[];
+  }[];
+  /** Popular flag combinations per command */
+  commandFlagCombos: {
+    command: string;
+    flags: string[];
+    count: number;
+  }[];
+}
+
+export interface SecretMatch {
+  /** Type of secret detected */
+  type: string;
+  /** Redacted version of the command */
+  redactedCommand: string;
+  /** Original command (for reference, be careful with display) */
+  originalCommand: string;
+}
+
+export interface SecretsStats {
+  /** Individual secret matches found */
+  potentialSecrets: SecretMatch[];
+  /** Total secrets found */
+  totalSecretsFound: number;
+  /** Count by secret type */
+  secretTypes: { type: string; count: number }[];
 }
 
 export interface QuirkyStats {
@@ -110,7 +136,8 @@ export interface Stats {
   activityByDay: DayActivity[];
   activityByHour: HourActivity[];
   topDirectories: TopDirectory[];
-  streaks: Streaks;
+  parameters: ParameterStats;
+  secrets: SecretsStats;
   quirky: QuirkyStats;
   highlights: Highlight[];
 }
