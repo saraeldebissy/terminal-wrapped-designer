@@ -17,7 +17,7 @@
     { "name": "cd", "count": 1120, "fullExamples": ["cd ~/projects", "cd ..", "cd src"], "percentile": 0.61 },
     { "name": "ls", "count": 940, "fullExamples": ["ls", "ls -la", "ls -lh"], "percentile": 0.51 },
     { "name": "claude", "count": 720, "fullExamples": ["claude", "claude -p 'fix the build'", "claude commit"], "percentile": 0.39 },
-    { "name": "npm", "count": 510, "fullExamples": ["npm install", "npm run dev", "npm test"], "percentile": 0.28 },
+    { "name": "pnpm", "count": 510, "fullExamples": ["pnpm install", "pnpm dev", "pnpm test"], "percentile": 0.28 },
     { "name": "code", "count": 430, "fullExamples": ["code .", "code package.json"], "percentile": 0.23 },
     { "name": "vim", "count": 280, "fullExamples": ["vim README.md", "vim config.ts"], "percentile": 0.15 },
     { "name": "docker", "count": 210, "fullExamples": ["docker ps", "docker compose up"], "percentile": 0.11 },
@@ -30,13 +30,13 @@
     { "command": "ls", "count": 540 },
     { "command": "cd ..", "count": 360 },
     { "command": "git add .", "count": 300 },
-    { "command": "npm run dev", "count": 180 }
+    { "command": "pnpm dev", "count": 180 }
   ],
   "categories": [
     { "name": "Version Control", "slug": "vcs", "count": 2300, "exampleCommands": ["git status", "git commit"] },
     { "name": "File Ops", "slug": "files", "count": 2250, "exampleCommands": ["ls", "cd", "cat"] },
     { "name": "Editors", "slug": "editor", "count": 710, "exampleCommands": ["code .", "vim"] },
-    { "name": "Package Management", "slug": "pkg", "count": 510, "exampleCommands": ["npm install", "npm run"] },
+    { "name": "Package Management", "slug": "pkg", "count": 510, "exampleCommands": ["pnpm install", "pnpm dev"] },
     { "name": "DevOps", "slug": "devops", "count": 210, "exampleCommands": ["docker ps", "kubectl get"] },
     { "name": "Remote Ops", "slug": "remote", "count": 120, "exampleCommands": ["ssh server", "curl"] }
   ],
