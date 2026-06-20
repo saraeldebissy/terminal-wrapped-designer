@@ -1,4 +1,5 @@
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
+import type { MouseEvent } from 'react';
 import { AnimatePresence } from 'motion/react';
 import type { Stats } from '../api/types';
 import { buildSlideManifest } from '../slides/manifest';
@@ -7,6 +8,9 @@ import { Slide } from './Slide';
 import { ProgressBars } from './ProgressBars';
 import { useStoryNavigation } from './useStoryNavigation';
 
+/** Selector for elements that should handle their own clicks/keys (not trigger navigation). */
+const INTERACTIVE = 'button, a, input, textarea, select';
+
 export interface StoryProps {
   stats: Stats;
 }
@@ -14,30 +18,42 @@ export interface StoryProps {
 export function Story({ stats }: StoryProps) {
   const slides = useMemo(() => buildSlideManifest(stats), [stats]);
   const nav = useStoryNavigation(slides.length);
-  const entry = slides[nav.index];
+  const { next, prev, index } = nav;
+
+  // Guard against a transient out-of-range index if the manifest ever shrinks.
+  const entry = slides[index] ?? slides[slides.length - 1];
   const SlideView = SLIDE_REGISTRY[entry.id];
+
+  const handleClick = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
+      // Let interactive controls (e.g. the receipt Download button) handle their own clicks.
+      if ((e.target as HTMLElement).closest(INTERACTIVE)) return;
+      if (e.clientX < window.innerWidth / 3) prev();
+      else next();
+    },
+    [next, prev],
+  );
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nav.next(); }
-      else if (e.key === 'ArrowLeft') { e.preventDefault(); nav.prev(); }
+      const t = e.target;
+      // Don't hijack keys when focus is on an interactive control.
+      if (t instanceof Element && t.closest(INTERACTIVE)) return;
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        next();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prev();
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [nav]);
+  }, [next, prev]);
 
   return (
-    <main className="relative h-full w-full overflow-hidden">
-      <ProgressBars count={slides.length} index={nav.index} />
-
-      {/* Click zones: left third = back, right two-thirds = forward */}
-      <button type="button" aria-label="Previous slide"
-        className="absolute left-0 top-0 z-20 h-full w-1/3 cursor-default"
-        onClick={nav.prev} />
-      <button type="button" aria-label="Next slide"
-        className="absolute right-0 top-0 z-20 h-full w-2/3 cursor-default"
-        onClick={nav.next} />
-
+    <main className="relative h-full w-full overflow-hidden cursor-pointer" onClick={handleClick}>
+      <ProgressBars count={slides.length} index={index} />
       <AnimatePresence mode="wait">
         <Slide key={entry.id} bg={entry.bg}>
           <SlideView stats={stats} />
