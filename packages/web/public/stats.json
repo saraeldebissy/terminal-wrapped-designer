@@ -1,115 +1,107 @@
 {
   "meta": {
-    "generatedAt": "2024-12-08T12:00:00.000Z",
+    "generatedAt": "2026-06-20T12:00:00.000Z",
     "version": "0.1.0",
-    "totalCommands": 12847,
-    "distinctCommands": 156,
+    "totalCommands": 6240,
+    "distinctCommands": 84,
     "dateRange": {
-      "start": "2024-01-01",
-      "end": "2024-12-07"
+      "start": "2026-01-01",
+      "end": "2026-06-20"
     },
     "filters": {
-      "year": 2024
+      "year": 2026
     }
   },
   "topCommands": [
-    { "name": "git", "count": 3421, "fullExamples": ["git status", "git add .", "git commit -m 'fix'"], "percentile": 1.0 },
-    { "name": "cd", "count": 2156, "fullExamples": ["cd ~/projects", "cd ..", "cd src"], "percentile": 0.63 },
-    { "name": "ls", "count": 1823, "fullExamples": ["ls", "ls -la", "ls -lh"], "percentile": 0.53 },
-    { "name": "npm", "count": 987, "fullExamples": ["npm install", "npm run dev", "npm test"], "percentile": 0.29 },
-    { "name": "code", "count": 756, "fullExamples": ["code .", "code package.json"], "percentile": 0.22 },
-    { "name": "vim", "count": 543, "fullExamples": ["vim README.md", "vim config.ts"], "percentile": 0.16 },
-    { "name": "docker", "count": 421, "fullExamples": ["docker ps", "docker-compose up"], "percentile": 0.12 },
-    { "name": "cat", "count": 389, "fullExamples": ["cat package.json", "cat .env"], "percentile": 0.11 },
-    { "name": "grep", "count": 312, "fullExamples": ["grep -r 'TODO'", "grep error logs"], "percentile": 0.09 },
-    { "name": "ssh", "count": 287, "fullExamples": ["ssh server", "ssh -i key.pem user@host"], "percentile": 0.08 }
+    { "name": "git", "count": 1840, "fullExamples": ["git status", "git add .", "git commit -m 'fix'"], "percentile": 1.0 },
+    { "name": "cd", "count": 1120, "fullExamples": ["cd ~/projects", "cd ..", "cd src"], "percentile": 0.61 },
+    { "name": "ls", "count": 940, "fullExamples": ["ls", "ls -la", "ls -lh"], "percentile": 0.51 },
+    { "name": "npm", "count": 510, "fullExamples": ["npm install", "npm run dev", "npm test"], "percentile": 0.28 },
+    { "name": "code", "count": 430, "fullExamples": ["code .", "code package.json"], "percentile": 0.23 },
+    { "name": "vim", "count": 280, "fullExamples": ["vim README.md", "vim config.ts"], "percentile": 0.15 },
+    { "name": "docker", "count": 210, "fullExamples": ["docker ps", "docker compose up"], "percentile": 0.11 },
+    { "name": "cat", "count": 190, "fullExamples": ["cat package.json", "cat .env"], "percentile": 0.10 },
+    { "name": "grep", "count": 160, "fullExamples": ["grep -r 'TODO'", "grep error logs"], "percentile": 0.09 },
+    { "name": "ssh", "count": 120, "fullExamples": ["ssh server", "ssh -i key.pem user@host"], "percentile": 0.07 }
   ],
   "topFullCommands": [
-    { "command": "git status", "count": 1234 },
-    { "command": "ls", "count": 987 },
-    { "command": "cd ..", "count": 654 },
-    { "command": "git add .", "count": 543 },
-    { "command": "npm run dev", "count": 321 }
+    { "command": "git status", "count": 720 },
+    { "command": "ls", "count": 540 },
+    { "command": "cd ..", "count": 360 },
+    { "command": "git add .", "count": 300 },
+    { "command": "npm run dev", "count": 180 }
   ],
   "categories": [
-    { "name": "Version Control", "slug": "vcs", "count": 3421, "exampleCommands": ["git status", "git commit"] },
-    { "name": "File Ops", "slug": "files", "count": 2890, "exampleCommands": ["ls", "cd", "cat"] },
-    { "name": "Package Management", "slug": "pkg", "count": 987, "exampleCommands": ["npm install", "npm run"] },
-    { "name": "Editors", "slug": "editor", "count": 1299, "exampleCommands": ["code .", "vim"] },
-    { "name": "DevOps", "slug": "devops", "count": 421, "exampleCommands": ["docker ps", "kubectl get"] },
-    { "name": "Remote Ops", "slug": "remote", "count": 599, "exampleCommands": ["ssh server", "curl"] }
+    { "name": "Version Control", "slug": "vcs", "count": 2300, "exampleCommands": ["git status", "git commit"] },
+    { "name": "File Ops", "slug": "files", "count": 2250, "exampleCommands": ["ls", "cd", "cat"] },
+    { "name": "Editors", "slug": "editor", "count": 710, "exampleCommands": ["code .", "vim"] },
+    { "name": "Package Management", "slug": "pkg", "count": 510, "exampleCommands": ["npm install", "npm run"] },
+    { "name": "DevOps", "slug": "devops", "count": 210, "exampleCommands": ["docker ps", "kubectl get"] },
+    { "name": "Remote Ops", "slug": "remote", "count": 120, "exampleCommands": ["ssh server", "curl"] }
   ],
   "activityByDay": [
-    { "date": "2024-11-01", "count": 45 },
-    { "date": "2024-11-02", "count": 23 },
-    { "date": "2024-11-03", "count": 12 },
-    { "date": "2024-11-04", "count": 67 },
-    { "date": "2024-11-05", "count": 89 },
-    { "date": "2024-11-06", "count": 54 },
-    { "date": "2024-11-07", "count": 78 },
-    { "date": "2024-11-08", "count": 92 },
-    { "date": "2024-11-09", "count": 34 },
-    { "date": "2024-11-10", "count": 21 },
-    { "date": "2024-11-11", "count": 56 },
-    { "date": "2024-11-12", "count": 87 },
-    { "date": "2024-11-13", "count": 65 },
-    { "date": "2024-11-14", "count": 98 },
-    { "date": "2024-11-15", "count": 43 },
-    { "date": "2024-11-18", "count": 76 },
-    { "date": "2024-11-19", "count": 89 },
-    { "date": "2024-11-20", "count": 112 },
-    { "date": "2024-11-21", "count": 87 },
-    { "date": "2024-11-22", "count": 65 },
-    { "date": "2024-11-25", "count": 98 },
-    { "date": "2024-11-26", "count": 76 },
-    { "date": "2024-11-27", "count": 54 },
-    { "date": "2024-12-02", "count": 89 },
-    { "date": "2024-12-03", "count": 123 },
-    { "date": "2024-12-04", "count": 98 },
-    { "date": "2024-12-05", "count": 87 },
-    { "date": "2024-12-06", "count": 76 },
-    { "date": "2024-12-07", "count": 65 }
+    { "date": "2026-01-14", "count": 38 },
+    { "date": "2026-01-22", "count": 54 },
+    { "date": "2026-02-03", "count": 47 },
+    { "date": "2026-02-11", "count": 72 },
+    { "date": "2026-02-19", "count": 61 },
+    { "date": "2026-02-26", "count": 88 },
+    { "date": "2026-03-04", "count": 69 },
+    { "date": "2026-03-12", "count": 142 },
+    { "date": "2026-03-20", "count": 95 },
+    { "date": "2026-03-27", "count": 58 },
+    { "date": "2026-04-08", "count": 76 },
+    { "date": "2026-04-16", "count": 84 },
+    { "date": "2026-04-23", "count": 49 },
+    { "date": "2026-05-05", "count": 91 },
+    { "date": "2026-05-13", "count": 67 },
+    { "date": "2026-05-21", "count": 103 },
+    { "date": "2026-05-28", "count": 72 },
+    { "date": "2026-06-04", "count": 86 },
+    { "date": "2026-06-11", "count": 64 },
+    { "date": "2026-06-18", "count": 79 }
   ],
   "activityByHour": [
-    { "hour": 0, "count": 12 },
-    { "hour": 1, "count": 5 },
-    { "hour": 2, "count": 2 },
-    { "hour": 3, "count": 1 },
+    { "hour": 0, "count": 6 },
+    { "hour": 1, "count": 3 },
+    { "hour": 2, "count": 1 },
+    { "hour": 3, "count": 0 },
     { "hour": 4, "count": 0 },
-    { "hour": 5, "count": 3 },
-    { "hour": 6, "count": 15 },
-    { "hour": 7, "count": 45 },
-    { "hour": 8, "count": 123 },
-    { "hour": 9, "count": 456 },
-    { "hour": 10, "count": 678 },
-    { "hour": 11, "count": 543 },
-    { "hour": 12, "count": 234 },
-    { "hour": 13, "count": 345 },
-    { "hour": 14, "count": 567 },
-    { "hour": 15, "count": 678 },
-    { "hour": 16, "count": 543 },
-    { "hour": 17, "count": 432 },
-    { "hour": 18, "count": 321 },
-    { "hour": 19, "count": 234 },
-    { "hour": 20, "count": 187 },
-    { "hour": 21, "count": 145 },
-    { "hour": 22, "count": 98 },
-    { "hour": 23, "count": 45 }
+    { "hour": 5, "count": 2 },
+    { "hour": 6, "count": 8 },
+    { "hour": 7, "count": 24 },
+    { "hour": 8, "count": 120 },
+    { "hour": 9, "count": 340 },
+    { "hour": 10, "count": 520 },
+    { "hour": 11, "count": 430 },
+    { "hour": 12, "count": 180 },
+    { "hour": 13, "count": 300 },
+    { "hour": 14, "count": 470 },
+    { "hour": 15, "count": 510 },
+    { "hour": 16, "count": 420 },
+    { "hour": 17, "count": 330 },
+    { "hour": 18, "count": 240 },
+    { "hour": 19, "count": 170 },
+    { "hour": 20, "count": 140 },
+    { "hour": 21, "count": 110 },
+    { "hour": 22, "count": 70 },
+    { "hour": 23, "count": 30 }
   ],
   "topDirectories": [
-    { "path": "~/projects/myapp", "count": 2345 },
-    { "path": "~/projects/api", "count": 1234 },
-    { "path": "~", "count": 987 }
+    { "path": "~/projects/myapp", "count": 1180 },
+    { "path": "~/projects/api", "count": 640 },
+    { "path": "~", "count": 510 }
   ],
   "parameters": {
     "topFlags": [
-      { "flag": "-m", "count": 420, "commands": ["git"] },
-      { "flag": "-rf", "count": 88, "commands": ["rm"] },
-      { "flag": "-la", "count": 310, "commands": ["ls"] }
+      { "flag": "-m", "count": 380, "commands": ["git"] },
+      { "flag": "-la", "count": 300, "commands": ["ls"] },
+      { "flag": "-r", "count": 95, "commands": ["grep"] }
     ],
     "commandFlagCombos": [
-      { "command": "git", "flags": ["commit", "-m"], "count": 420 },
-      { "command": "ls", "flags": ["-la"], "count": 310 }
+      { "command": "git", "flags": ["commit", "-m"], "count": 380 },
+      { "command": "ls", "flags": ["-la"], "count": 300 },
+      { "command": "grep", "flags": ["-r"], "count": 95 }
     ]
   },
   "secrets": {
@@ -117,46 +109,46 @@
       { "type": "GitHub Token", "redactedCommand": "export GH_TOKEN=ghp_****", "originalCommand": "export GH_TOKEN=ghp_REDACTED" },
       { "type": "AWS Key", "redactedCommand": "AWS_SECRET=****", "originalCommand": "AWS_SECRET=REDACTED" }
     ],
-    "totalSecretsFound": 7,
+    "totalSecretsFound": 5,
     "secretTypes": [
-      { "type": "GitHub Token", "count": 4 },
-      { "type": "AWS Key", "count": 3 }
+      { "type": "GitHub Token", "count": 3 },
+      { "type": "AWS Key", "count": 2 }
     ]
   },
   "quirky": {
-    "sudoCount": 156,
-    "aliasLikeCount": 234,
-    "destructiveCount": 23
+    "sudoCount": 78,
+    "aliasLikeCount": 140,
+    "destructiveCount": 9
   },
   "highlights": [
     {
       "id": "top-command",
       "title": "Your #1 Command",
-      "description": "You ran **git** 3,421 times. That's your terminal's main character.",
+      "description": "You ran **git** 1,840 times. That's your terminal's main character.",
       "iconKey": "star"
     },
     {
-      "id": "git-guru",
-      "title": "Git Guru",
-      "description": "Git is your #1 command with 3,421 uses. Version control champion!",
-      "iconKey": "git-branch"
+      "id": "night-owl",
+      "title": "Mid-morning Maker",
+      "description": "Your terminal runs hottest around **10AM**. Coffee-fueled commits.",
+      "iconKey": "sun"
     },
     {
       "id": "streak-hero",
       "title": "Streak Hero",
-      "description": "You had a **14-day** streak of terminal activity. Respect.",
+      "description": "You had an **11-day** streak of terminal activity. Respect.",
       "iconKey": "flame"
     },
     {
       "id": "sudo-wielder",
       "title": "Sudo Wielder",
-      "description": "You used sudo 156 times. With great power...",
+      "description": "You used sudo 78 times. With great power...",
       "iconKey": "shield"
     },
     {
       "id": "prolific",
       "title": "Terminal Power User",
-      "description": "12,847 commands! Your terminal has seen some things.",
+      "description": "6,240 commands this year. Your shell has seen some things.",
       "iconKey": "zap"
     }
   ]

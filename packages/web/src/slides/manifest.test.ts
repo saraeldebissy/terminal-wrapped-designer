@@ -6,8 +6,8 @@ describe('buildSlideManifest', () => {
   it('includes all slides for full stats, in order', () => {
     const ids = buildSlideManifest(fullStats).map((s) => s.id);
     expect(ids).toEqual([
-      'cover', 'volume', 'type', 'peakHour',
-      'busiestDay', 'flag', 'countdown', 'secrets', 'receipt',
+      'cover', 'volume', 'countdown', 'type', 'peakHour',
+      'busiestDay', 'flag', 'secrets', 'receipt',
     ]);
   });
 

@@ -17,7 +17,7 @@ export function ReceiptSlide({ stats }: SlideViewProps) {
   return (
     <div className="flex flex-col items-center">
       <div ref={cardRef} className="w-full max-w-sm bg-ink border border-white/15 rounded-2xl p-6">
-        <p className="font-mono text-lime text-xs uppercase tracking-widest">Terminal, Wrapped</p>
+        <p className="font-mono text-lime text-xs uppercase tracking-widest">Terminal Wrapped · designer edition</p>
         <p className="mt-1 font-display font-extrabold text-2xl">{copy.receiptTitle}</p>
         <dl className="mt-4 divide-y divide-white/10">
           {rows.map(([label, value]) => (

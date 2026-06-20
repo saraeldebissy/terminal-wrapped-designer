@@ -128,11 +128,11 @@ describe('Story engine', () => {
     // This is the only reliable way to drive AnimatePresence mode="wait"
     // without racing the animation queue.
     await pressRightUntil(VOLUME_TEXT);
+    await pressRightUntil(COUNTDOWN_TEXT);
     await pressRightUntil(TYPE_TEXT);
     await pressRightUntil(PEAK_TEXT);
     await pressRightUntil(BUSIEST_TEXT);
     await pressRightUntil(FLAG_TEXT);
-    await pressRightUntil(COUNTDOWN_TEXT);
     await pressRightUntil(SECRETS_TEXT);
     await pressRightUntil(RECEIPT_TEXT);
 

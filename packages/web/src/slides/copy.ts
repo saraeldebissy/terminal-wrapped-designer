@@ -20,7 +20,7 @@ export function topCategoryPct(count: number, total: number): number {
  */
 export const copy = {
   coverTitle: 'You and your shell had a year',
-  coverKicker: 'Terminal, Wrapped',
+  coverKicker: 'Terminal Wrapped, designer edition',
   volumeKicker: 'This year you ran',
   volumeAside: (distinct: number) => `${distinct} different tools. No notes.`,
   typeKicker: 'Turns out you’re a',

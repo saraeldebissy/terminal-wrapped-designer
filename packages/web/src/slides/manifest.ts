@@ -12,6 +12,10 @@ export function buildSlideManifest(stats: Stats): SlideEntry[] {
   entries.push({ id: 'cover', bg: 'ink' });
   entries.push({ id: 'volume', bg: 'magenta' });
 
+  // Top commands countdown sits right after the volume reveal.
+  if ((stats.topCommands?.length ?? 0) > 0) {
+    entries.push({ id: 'countdown', bg: 'blue' });
+  }
   if ((stats.categories?.length ?? 0) > 0) {
     entries.push({ id: 'type', bg: 'lime' });
   }
@@ -23,9 +27,6 @@ export function buildSlideManifest(stats: Stats): SlideEntry[] {
   }
   if ((stats.parameters?.topFlags?.length ?? 0) > 0) {
     entries.push({ id: 'flag', bg: 'ink' });
-  }
-  if ((stats.topCommands?.length ?? 0) > 0) {
-    entries.push({ id: 'countdown', bg: 'blue' });
   }
   if ((stats.secrets?.totalSecretsFound ?? 0) > 0) {
     entries.push({ id: 'secrets', bg: 'ink' });
