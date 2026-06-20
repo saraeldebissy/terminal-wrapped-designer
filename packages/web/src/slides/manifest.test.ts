@@ -100,4 +100,16 @@ describe('buildSlideManifest', () => {
     expect(ids).toContain('flag');
     expect(ids).toContain('countdown');
   });
+
+  it('does not crash and skips flag/secrets when parameters and secrets are absent (legacy stats.json)', () => {
+    const legacy = { ...fullStats } as Record<string, unknown>;
+    delete legacy.parameters;
+    delete legacy.secrets;
+    const ids = buildSlideManifest(legacy as unknown as import('../api/types').Stats).map((s) => s.id);
+    expect(ids).not.toContain('flag');
+    expect(ids).not.toContain('secrets');
+    expect(ids[0]).toBe('cover');
+    expect(ids[ids.length - 1]).toBe('receipt');
+    expect(ids).toContain('countdown');
+  });
 });

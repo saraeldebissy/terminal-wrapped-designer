@@ -12,22 +12,22 @@ export function buildSlideManifest(stats: Stats): SlideEntry[] {
   entries.push({ id: 'cover', bg: 'ink' });
   entries.push({ id: 'volume', bg: 'magenta' });
 
-  if (stats.categories.length > 0) {
+  if ((stats.categories?.length ?? 0) > 0) {
     entries.push({ id: 'type', bg: 'lime' });
   }
-  if (stats.activityByHour.some((h) => h.count > 0)) {
+  if (stats.activityByHour?.some((h) => h.count > 0)) {
     entries.push({ id: 'peakHour', bg: 'blue' });
   }
-  if (stats.activityByDay.length > 0) {
+  if ((stats.activityByDay?.length ?? 0) > 0) {
     entries.push({ id: 'busiestDay', bg: 'violet' });
   }
-  if (stats.parameters.topFlags.length > 0) {
+  if ((stats.parameters?.topFlags?.length ?? 0) > 0) {
     entries.push({ id: 'flag', bg: 'ink' });
   }
-  if (stats.topCommands.length > 0) {
+  if ((stats.topCommands?.length ?? 0) > 0) {
     entries.push({ id: 'countdown', bg: 'blue' });
   }
-  if (stats.secrets.totalSecretsFound > 0) {
+  if ((stats.secrets?.totalSecretsFound ?? 0) > 0) {
     entries.push({ id: 'secrets', bg: 'ink' });
   }
 

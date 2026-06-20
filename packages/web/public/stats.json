@@ -101,9 +101,27 @@
     { "path": "~/projects/api", "count": 1234 },
     { "path": "~", "count": 987 }
   ],
-  "streaks": {
-    "longestStreakDays": 14,
-    "currentStreakDays": 5
+  "parameters": {
+    "topFlags": [
+      { "flag": "-m", "count": 420, "commands": ["git"] },
+      { "flag": "--rf", "count": 88, "commands": ["rm"] },
+      { "flag": "-la", "count": 310, "commands": ["ls"] }
+    ],
+    "commandFlagCombos": [
+      { "command": "git", "flags": ["commit", "-m"], "count": 420 },
+      { "command": "ls", "flags": ["-la"], "count": 310 }
+    ]
+  },
+  "secrets": {
+    "potentialSecrets": [
+      { "type": "GitHub Token", "redactedCommand": "export GH_TOKEN=ghp_****", "originalCommand": "export GH_TOKEN=ghp_REDACTED" },
+      { "type": "AWS Key", "redactedCommand": "AWS_SECRET=****", "originalCommand": "AWS_SECRET=REDACTED" }
+    ],
+    "totalSecretsFound": 7,
+    "secretTypes": [
+      { "type": "GitHub Token", "count": 4 },
+      { "type": "AWS Key", "count": 3 }
+    ]
   },
   "quirky": {
     "sudoCount": 156,

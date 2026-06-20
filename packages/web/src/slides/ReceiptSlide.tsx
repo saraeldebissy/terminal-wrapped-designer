@@ -11,7 +11,7 @@ export function ReceiptSlide({ stats }: SlideViewProps) {
     ['commands run', fmt(stats.meta.totalCommands)],
     ['tools used', fmt(stats.meta.distinctCommands)],
     ['#1 command', top ? top.name : '—'],
-    ['secrets leaked', fmt(stats.secrets.totalSecretsFound)],
+    ['secrets leaked', fmt(stats.secrets?.totalSecretsFound ?? 0)],
   ];
 
   return (

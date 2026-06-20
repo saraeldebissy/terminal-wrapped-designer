@@ -9,4 +9,11 @@ describe('ReceiptSlide', () => {
     expect(screen.getByText('commands run')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /download your wrapped/i })).toBeInTheDocument();
   });
+
+  it('renders 0 secrets leaked when secrets section is absent', () => {
+    const legacy = { ...fullStats } as Record<string, unknown>;
+    delete legacy.secrets;
+    render(<ReceiptSlide stats={legacy as unknown as import('../api/types').Stats} />);
+    expect(screen.getByText('secrets leaked')).toBeInTheDocument();
+  });
 });
