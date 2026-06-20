@@ -31,7 +31,13 @@ export function ReceiptSlide({ stats }: SlideViewProps) {
       <button
         type="button"
         className="mt-6 bg-lime text-ink font-display font-bold px-5 py-2 rounded-full"
-        onClick={() => cardRef.current && downloadNodeAsPng(cardRef.current)}
+        onClick={() => {
+          if (cardRef.current) {
+            downloadNodeAsPng(cardRef.current).catch((err) => {
+              console.error('Failed to export Wrapped image:', err);
+            });
+          }
+        }}
       >
         Download your Wrapped
       </button>
