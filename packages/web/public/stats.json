@@ -14,9 +14,9 @@
   },
   "topCommands": [
     { "name": "git", "count": 240, "fullExamples": ["git status", "git add .", "git commit -m 'fix'"], "percentile": 1.0 },
-    { "name": "claude", "count": 210, "fullExamples": ["claude", "claude -p 'fix the build'", "claude commit"], "percentile": 0.88 },
-    { "name": "cd", "count": 180, "fullExamples": ["cd ~/builds", "cd ..", "cd terminal-wrapped"], "percentile": 0.75 },
-    { "name": "ls", "count": 150, "fullExamples": ["ls", "ls -la", "ls -lh"], "percentile": 0.63 },
+    { "name": "cd", "count": 200, "fullExamples": ["cd ~/builds", "cd ..", "cd terminal-wrapped"], "percentile": 0.83 },
+    { "name": "ls", "count": 175, "fullExamples": ["ls", "ls -la", "ls -lh"], "percentile": 0.73 },
+    { "name": "claude", "count": 150, "fullExamples": ["claude", "claude -p 'fix the build'", "claude commit"], "percentile": 0.63 },
     { "name": "npm", "count": 120, "fullExamples": ["npm install", "npm run dev", "npm test"], "percentile": 0.50 },
     { "name": "codex", "count": 95, "fullExamples": ["codex", "codex -m gpt", "codex exec"], "percentile": 0.40 },
     { "name": "nano", "count": 80, "fullExamples": ["nano README.md", "nano .env", "nano config.ts"], "percentile": 0.33 },
@@ -27,15 +27,15 @@
   ],
   "topFullCommands": [
     { "command": "git status", "count": 95 },
-    { "command": "claude", "count": 80 },
+    { "command": "cd ..", "count": 80 },
     { "command": "ls", "count": 70 },
-    { "command": "cd ..", "count": 55 },
+    { "command": "claude", "count": 55 },
     { "command": "npm run dev", "count": 40 }
   ],
   "categories": [
-    { "name": "File Ops", "slug": "files", "count": 385, "exampleCommands": ["ls", "cd", "cat"] },
-    { "name": "AI Tools", "slug": "ai", "count": 305, "exampleCommands": ["claude", "codex"] },
+    { "name": "File Ops", "slug": "files", "count": 430, "exampleCommands": ["ls", "cd", "cat"] },
     { "name": "Version Control", "slug": "vcs", "count": 288, "exampleCommands": ["git status", "gh pr create"] },
+    { "name": "AI Tools", "slug": "ai", "count": 245, "exampleCommands": ["claude", "codex"] },
     { "name": "Package Management", "slug": "pkg", "count": 190, "exampleCommands": ["npm install", "brew install"] },
     { "name": "Shell & Env", "slug": "shell", "count": 95, "exampleCommands": ["source", "export"] },
     { "name": "Editors", "slug": "editor", "count": 80, "exampleCommands": ["nano"] }
@@ -131,7 +131,7 @@
     {
       "id": "ai-pair",
       "title": "AI Pair Programmer",
-      "description": "You called **claude** 210 times. Pair programming, redefined.",
+      "description": "You called **claude** 150 times. Pair programming, redefined.",
       "iconKey": "zap"
     },
     {
