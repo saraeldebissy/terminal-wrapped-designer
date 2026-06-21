@@ -40,6 +40,31 @@ export const copy = {
 } as const;
 
 /**
+ * Plain-English translations for common flags, so the Flag slide explains
+ * itself instead of showing a cryptic `-la`. Unknown flags return '' and the
+ * slide simply omits the translation line.
+ */
+const FLAG_GLOSS: Record<string, string> = {
+  '-la': 'list everything, hidden files and all',
+  '-al': 'list everything, hidden files and all',
+  '-l': 'the long, detailed listing',
+  '-a': 'show the hidden files too',
+  '-m': 'commit with a message',
+  '-p': 'run a one-shot prompt',
+  '-r': 'do it recursively',
+  '-rf': 'delete it, and don’t ask',
+  '-g': 'install it globally',
+  '-v': 'be loud about it',
+  '-h': 'in human-readable sizes',
+  '-i': 'ask before each step',
+  '-f': 'force it through',
+};
+
+export function flagGloss(flag: string): string {
+  return FLAG_GLOSS[flag] ?? '';
+}
+
+/**
  * The `$ command` shown in each slide's terminal-window prompt line.
  * Keyed by slide id; kept short so they fit on one line inside the chrome.
  */
