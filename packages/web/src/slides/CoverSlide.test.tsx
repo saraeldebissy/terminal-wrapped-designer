@@ -6,6 +6,6 @@ import { fullStats } from '../test/fixtures';
 describe('CoverSlide', () => {
   it('renders the cover title', () => {
     render(<CoverSlide stats={fullStats} />);
-    expect(screen.getByText(/you and your shell/i)).toBeInTheDocument();
+    expect(screen.getByText(/you & your shell/i)).toBeInTheDocument();
   });
 });
