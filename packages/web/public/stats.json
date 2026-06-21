@@ -1,132 +1,138 @@
 {
   "meta": {
-    "generatedAt": "2026-06-20T12:00:00.000Z",
+    "generatedAt": "2026-06-21T09:00:00.000Z",
     "version": "0.1.0",
-    "totalCommands": 6960,
-    "distinctCommands": 85,
+    "totalCommands": 1800,
+    "distinctCommands": 58,
     "dateRange": {
       "start": "2026-01-01",
-      "end": "2026-06-20"
+      "end": "2026-06-21"
     },
     "filters": {
       "year": 2026
     }
   },
   "topCommands": [
-    { "name": "git", "count": 1840, "fullExamples": ["git status", "git add .", "git commit -m 'fix'"], "percentile": 1.0 },
-    { "name": "cd", "count": 1120, "fullExamples": ["cd ~/projects", "cd ..", "cd src"], "percentile": 0.61 },
-    { "name": "ls", "count": 940, "fullExamples": ["ls", "ls -la", "ls -lh"], "percentile": 0.51 },
-    { "name": "claude", "count": 720, "fullExamples": ["claude", "claude -p 'fix the build'", "claude commit"], "percentile": 0.39 },
-    { "name": "pnpm", "count": 510, "fullExamples": ["pnpm install", "pnpm dev", "pnpm test"], "percentile": 0.28 },
-    { "name": "code", "count": 430, "fullExamples": ["code .", "code package.json"], "percentile": 0.23 },
-    { "name": "vim", "count": 280, "fullExamples": ["vim README.md", "vim config.ts"], "percentile": 0.15 },
-    { "name": "docker", "count": 210, "fullExamples": ["docker ps", "docker compose up"], "percentile": 0.11 },
-    { "name": "cat", "count": 190, "fullExamples": ["cat package.json", "cat .env"], "percentile": 0.10 },
-    { "name": "grep", "count": 160, "fullExamples": ["grep -r 'TODO'", "grep error logs"], "percentile": 0.09 },
-    { "name": "ssh", "count": 120, "fullExamples": ["ssh server", "ssh -i key.pem user@host"], "percentile": 0.07 }
+    { "name": "git", "count": 240, "fullExamples": ["git status", "git add .", "git commit -m 'fix'"], "percentile": 1.0 },
+    { "name": "claude", "count": 210, "fullExamples": ["claude", "claude -p 'fix the build'", "claude commit"], "percentile": 0.88 },
+    { "name": "cd", "count": 180, "fullExamples": ["cd ~/builds", "cd ..", "cd terminal-wrapped"], "percentile": 0.75 },
+    { "name": "ls", "count": 150, "fullExamples": ["ls", "ls -la", "ls -lh"], "percentile": 0.63 },
+    { "name": "npm", "count": 120, "fullExamples": ["npm install", "npm run dev", "npm test"], "percentile": 0.50 },
+    { "name": "codex", "count": 95, "fullExamples": ["codex", "codex -m gpt", "codex exec"], "percentile": 0.40 },
+    { "name": "nano", "count": 80, "fullExamples": ["nano README.md", "nano .env", "nano config.ts"], "percentile": 0.33 },
+    { "name": "brew", "count": 70, "fullExamples": ["brew install", "brew upgrade", "brew list"], "percentile": 0.29 },
+    { "name": "cat", "count": 55, "fullExamples": ["cat package.json", "cat .env"], "percentile": 0.23 },
+    { "name": "gh", "count": 48, "fullExamples": ["gh repo view", "gh pr create"], "percentile": 0.20 },
+    { "name": "source", "count": 42, "fullExamples": ["source ~/.zshrc", "source .venv/bin/activate"], "percentile": 0.18 }
   ],
   "topFullCommands": [
-    { "command": "git status", "count": 720 },
-    { "command": "ls", "count": 540 },
-    { "command": "cd ..", "count": 360 },
-    { "command": "git add .", "count": 300 },
-    { "command": "pnpm dev", "count": 180 }
+    { "command": "git status", "count": 95 },
+    { "command": "claude", "count": 80 },
+    { "command": "ls", "count": 70 },
+    { "command": "cd ..", "count": 55 },
+    { "command": "npm run dev", "count": 40 }
   ],
   "categories": [
-    { "name": "Version Control", "slug": "vcs", "count": 2300, "exampleCommands": ["git status", "git commit"] },
-    { "name": "File Ops", "slug": "files", "count": 2250, "exampleCommands": ["ls", "cd", "cat"] },
-    { "name": "Editors", "slug": "editor", "count": 710, "exampleCommands": ["code .", "vim"] },
-    { "name": "Package Management", "slug": "pkg", "count": 510, "exampleCommands": ["pnpm install", "pnpm dev"] },
-    { "name": "DevOps", "slug": "devops", "count": 210, "exampleCommands": ["docker ps", "kubectl get"] },
-    { "name": "Remote Ops", "slug": "remote", "count": 120, "exampleCommands": ["ssh server", "curl"] }
+    { "name": "File Ops", "slug": "files", "count": 385, "exampleCommands": ["ls", "cd", "cat"] },
+    { "name": "AI Tools", "slug": "ai", "count": 305, "exampleCommands": ["claude", "codex"] },
+    { "name": "Version Control", "slug": "vcs", "count": 288, "exampleCommands": ["git status", "gh pr create"] },
+    { "name": "Package Management", "slug": "pkg", "count": 190, "exampleCommands": ["npm install", "brew install"] },
+    { "name": "Shell & Env", "slug": "shell", "count": 95, "exampleCommands": ["source", "export"] },
+    { "name": "Editors", "slug": "editor", "count": 80, "exampleCommands": ["nano"] }
   ],
   "activityByDay": [
-    { "date": "2026-01-14", "count": 38 },
-    { "date": "2026-01-22", "count": 54 },
-    { "date": "2026-02-03", "count": 47 },
-    { "date": "2026-02-11", "count": 72 },
-    { "date": "2026-02-19", "count": 61 },
-    { "date": "2026-02-26", "count": 88 },
-    { "date": "2026-03-04", "count": 69 },
-    { "date": "2026-03-12", "count": 142 },
-    { "date": "2026-03-20", "count": 95 },
-    { "date": "2026-03-27", "count": 58 },
-    { "date": "2026-04-08", "count": 76 },
-    { "date": "2026-04-16", "count": 84 },
-    { "date": "2026-04-23", "count": 49 },
-    { "date": "2026-05-05", "count": 91 },
-    { "date": "2026-05-13", "count": 67 },
-    { "date": "2026-05-21", "count": 103 },
-    { "date": "2026-05-28", "count": 72 },
-    { "date": "2026-06-04", "count": 86 },
-    { "date": "2026-06-11", "count": 64 },
-    { "date": "2026-06-18", "count": 79 }
+    { "date": "2026-01-14", "count": 12 },
+    { "date": "2026-01-22", "count": 18 },
+    { "date": "2026-02-03", "count": 15 },
+    { "date": "2026-02-11", "count": 24 },
+    { "date": "2026-02-19", "count": 20 },
+    { "date": "2026-02-26", "count": 29 },
+    { "date": "2026-03-04", "count": 22 },
+    { "date": "2026-03-12", "count": 38 },
+    { "date": "2026-03-20", "count": 31 },
+    { "date": "2026-03-27", "count": 19 },
+    { "date": "2026-04-08", "count": 25 },
+    { "date": "2026-04-16", "count": 27 },
+    { "date": "2026-04-23", "count": 16 },
+    { "date": "2026-05-05", "count": 30 },
+    { "date": "2026-05-13", "count": 21 },
+    { "date": "2026-05-21", "count": 34 },
+    { "date": "2026-05-28", "count": 23 },
+    { "date": "2026-06-04", "count": 28 },
+    { "date": "2026-06-11", "count": 20 },
+    { "date": "2026-06-18", "count": 26 }
   ],
   "activityByHour": [
-    { "hour": 0, "count": 6 },
-    { "hour": 1, "count": 3 },
+    { "hour": 0, "count": 4 },
+    { "hour": 1, "count": 2 },
     { "hour": 2, "count": 1 },
     { "hour": 3, "count": 0 },
     { "hour": 4, "count": 0 },
-    { "hour": 5, "count": 2 },
-    { "hour": 6, "count": 8 },
-    { "hour": 7, "count": 24 },
-    { "hour": 8, "count": 120 },
-    { "hour": 9, "count": 340 },
-    { "hour": 10, "count": 520 },
-    { "hour": 11, "count": 430 },
-    { "hour": 12, "count": 180 },
-    { "hour": 13, "count": 300 },
-    { "hour": 14, "count": 470 },
-    { "hour": 15, "count": 510 },
-    { "hour": 16, "count": 420 },
-    { "hour": 17, "count": 330 },
-    { "hour": 18, "count": 240 },
-    { "hour": 19, "count": 170 },
-    { "hour": 20, "count": 140 },
-    { "hour": 21, "count": 110 },
-    { "hour": 22, "count": 70 },
-    { "hour": 23, "count": 30 }
+    { "hour": 5, "count": 1 },
+    { "hour": 6, "count": 4 },
+    { "hour": 7, "count": 14 },
+    { "hour": 8, "count": 60 },
+    { "hour": 9, "count": 150 },
+    { "hour": 10, "count": 210 },
+    { "hour": 11, "count": 160 },
+    { "hour": 12, "count": 75 },
+    { "hour": 13, "count": 130 },
+    { "hour": 14, "count": 190 },
+    { "hour": 15, "count": 195 },
+    { "hour": 16, "count": 150 },
+    { "hour": 17, "count": 120 },
+    { "hour": 18, "count": 95 },
+    { "hour": 19, "count": 72 },
+    { "hour": 20, "count": 60 },
+    { "hour": 21, "count": 48 },
+    { "hour": 22, "count": 32 },
+    { "hour": 23, "count": 14 }
   ],
   "topDirectories": [
-    { "path": "~/projects/myapp", "count": 1180 },
-    { "path": "~/projects/api", "count": 640 },
-    { "path": "~", "count": 510 }
+    { "path": "~/builds/terminal-wrapped", "count": 320 },
+    { "path": "~/builds", "count": 140 },
+    { "path": "~", "count": 110 }
   ],
   "parameters": {
     "topFlags": [
-      { "flag": "-m", "count": 380, "commands": ["git"] },
-      { "flag": "-la", "count": 300, "commands": ["ls"] },
-      { "flag": "-r", "count": 95, "commands": ["grep"] }
+      { "flag": "-la", "count": 48, "commands": ["ls"] },
+      { "flag": "-m", "count": 44, "commands": ["git"] },
+      { "flag": "-p", "count": 24, "commands": ["claude"] }
     ],
     "commandFlagCombos": [
-      { "command": "git", "flags": ["commit", "-m"], "count": 380 },
-      { "command": "ls", "flags": ["-la"], "count": 300 },
-      { "command": "grep", "flags": ["-r"], "count": 95 }
+      { "command": "ls", "flags": ["-la"], "count": 48 },
+      { "command": "git", "flags": ["commit", "-m"], "count": 44 },
+      { "command": "claude", "flags": ["-p"], "count": 24 }
     ]
   },
   "secrets": {
     "potentialSecrets": [
       { "type": "GitHub Token", "redactedCommand": "export GH_TOKEN=ghp_****", "originalCommand": "export GH_TOKEN=ghp_REDACTED" },
-      { "type": "AWS Key", "redactedCommand": "AWS_SECRET=****", "originalCommand": "AWS_SECRET=REDACTED" }
+      { "type": "OpenAI Key", "redactedCommand": "export OPENAI_API_KEY=sk-****", "originalCommand": "export OPENAI_API_KEY=sk-REDACTED" }
     ],
-    "totalSecretsFound": 5,
+    "totalSecretsFound": 2,
     "secretTypes": [
-      { "type": "GitHub Token", "count": 3 },
-      { "type": "AWS Key", "count": 2 }
+      { "type": "GitHub Token", "count": 1 },
+      { "type": "OpenAI Key", "count": 1 }
     ]
   },
   "quirky": {
-    "sudoCount": 78,
-    "aliasLikeCount": 140,
-    "destructiveCount": 9
+    "sudoCount": 6,
+    "aliasLikeCount": 40,
+    "destructiveCount": 1
   },
   "highlights": [
     {
       "id": "top-command",
       "title": "Your #1 Command",
-      "description": "You ran **git** 1,840 times. That's your terminal's main character.",
+      "description": "You ran **git** 240 times. That's your terminal's main character.",
       "iconKey": "star"
+    },
+    {
+      "id": "ai-pair",
+      "title": "AI Pair Programmer",
+      "description": "You called **claude** 210 times. Pair programming, redefined.",
+      "iconKey": "zap"
     },
     {
       "id": "night-owl",
@@ -137,19 +143,13 @@
     {
       "id": "streak-hero",
       "title": "Streak Hero",
-      "description": "You had an **11-day** streak of terminal activity. Respect.",
+      "description": "You had a **7-day** streak of terminal activity. Respect.",
       "iconKey": "flame"
     },
     {
-      "id": "sudo-wielder",
-      "title": "Sudo Wielder",
-      "description": "You used sudo 78 times. With great power...",
-      "iconKey": "shield"
-    },
-    {
       "id": "prolific",
-      "title": "Terminal Power User",
-      "description": "6,960 commands this year. Your shell has seen some things.",
+      "title": "Terminal Regular",
+      "description": "1,800 commands this year. Your shell has seen some things.",
       "iconKey": "zap"
     }
   ]
