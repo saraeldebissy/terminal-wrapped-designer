@@ -38,3 +38,19 @@ export const copy = {
   secretsAside: 'Bold.',
   receiptTitle: 'That’s your year in the terminal',
 } as const;
+
+/**
+ * The `$ command` shown in each slide's terminal-window prompt line.
+ * Keyed by slide id; kept short so they fit on one line inside the chrome.
+ */
+export const PROMPTS: Record<string, string> = {
+  cover: 'wrapped --year 2026',
+  volume: 'history | wc -l',
+  countdown: 'history | uniq -c | sort -rn',
+  type: 'classify --by-category',
+  peakHour: 'peak --by-hour',
+  busiestDay: 'peak --by-day',
+  flag: 'flags --top',
+  secrets: 'scan --secrets',
+  receipt: 'cat ~/.wrapped',
+};

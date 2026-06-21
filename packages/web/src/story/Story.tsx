@@ -4,6 +4,7 @@ import { AnimatePresence, MotionConfig } from 'motion/react';
 import type { Stats } from '../api/types';
 import { buildSlideManifest } from '../slides/manifest';
 import { SLIDE_REGISTRY } from '../slides/registry';
+import { PROMPTS } from '../slides/copy';
 import { Slide } from './Slide';
 import { ProgressBars } from './ProgressBars';
 import { useStoryNavigation } from './useStoryNavigation';
@@ -74,7 +75,7 @@ export function Story({ stats }: StoryProps) {
         </div>
         <ProgressBars count={slides.length} index={index} />
         <AnimatePresence mode="wait">
-          <Slide key={entry.id} bg={entry.bg}>
+          <Slide key={entry.id} bg={entry.bg} command={PROMPTS[entry.id]}>
             <SlideView stats={stats} />
           </Slide>
         </AnimatePresence>
