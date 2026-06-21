@@ -132,8 +132,8 @@ describe('Story engine', () => {
     await pressRightUntil(TYPE_TEXT);
     await pressRightUntil(PEAK_TEXT);
     await pressRightUntil(BUSIEST_TEXT);
-    await pressRightUntil(FLAG_TEXT);
     await pressRightUntil(SECRETS_TEXT);
+    await pressRightUntil(FLAG_TEXT);
     await pressRightUntil(RECEIPT_TEXT);
 
     // Confirm we're on the receipt slide

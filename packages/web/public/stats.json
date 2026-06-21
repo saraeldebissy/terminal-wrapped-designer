@@ -2,7 +2,7 @@
   "meta": {
     "generatedAt": "2026-06-21T09:00:00.000Z",
     "version": "0.1.0",
-    "totalCommands": 1800,
+    "totalCommands": 1726,
     "distinctCommands": 58,
     "dateRange": {
       "start": "2026-01-01",
@@ -72,13 +72,13 @@
     { "hour": 6, "count": 4 },
     { "hour": 7, "count": 14 },
     { "hour": 8, "count": 60 },
-    { "hour": 9, "count": 150 },
-    { "hour": 10, "count": 210 },
-    { "hour": 11, "count": 160 },
+    { "hour": 9, "count": 140 },
+    { "hour": 10, "count": 200 },
+    { "hour": 11, "count": 149 },
     { "hour": 12, "count": 75 },
-    { "hour": 13, "count": 130 },
-    { "hour": 14, "count": 190 },
-    { "hour": 15, "count": 195 },
+    { "hour": 13, "count": 120 },
+    { "hour": 14, "count": 180 },
+    { "hour": 15, "count": 185 },
     { "hour": 16, "count": 150 },
     { "hour": 17, "count": 120 },
     { "hour": 18, "count": 95 },
@@ -149,7 +149,7 @@
     {
       "id": "prolific",
       "title": "Terminal Regular",
-      "description": "1,800 commands this year. Your shell has seen some things.",
+      "description": "1,726 commands this year. Your shell has seen some things.",
       "iconKey": "zap"
     }
   ]

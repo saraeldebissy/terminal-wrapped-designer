@@ -7,6 +7,11 @@ import { rgba } from '../theme/color';
  * and an optional `$ command` prompt line. The panel is a faint tint of the
  * slide's text color (computed via rgba — see theme/color.ts for why we can't
  * use Tailwind's `*-current/NN`), so it gives depth on any background.
+ *
+ * The window is a FIXED size across every slide (sized to comfortably hold the
+ * busiest slide) so the frame never resizes as you tap through. The prompt is
+ * pinned just under the title bar; the slide's content is vertically centered
+ * in whatever space remains.
  */
 export function TerminalChrome({
   tint,
@@ -19,8 +24,9 @@ export function TerminalChrome({
 }) {
   return (
     <div
-      className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl shadow-black/30"
+      className="relative w-full max-w-3xl flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-black/30"
       style={{
+        height: 'clamp(520px, 86vh, 700px)',
         backgroundColor: rgba(tint, 0.04),
         border: `1px solid ${rgba(tint, 0.14)}`,
         backdropFilter: 'blur(2px)',
@@ -28,7 +34,7 @@ export function TerminalChrome({
     >
       {/* Title bar */}
       <div
-        className="flex items-center gap-2 px-5 py-3"
+        className="flex items-center gap-2 px-5 py-3 shrink-0"
         style={{ borderBottom: `1px solid ${rgba(tint, 0.1)}` }}
       >
         <span className="h-3 w-3 rounded-full bg-coral" />
@@ -42,15 +48,18 @@ export function TerminalChrome({
         </span>
       </div>
 
-      {/* Body */}
-      <div className="px-6 md:px-10 py-9 md:py-12">
+      {/* Body — prompt pinned at top, content centered in the rest */}
+      <div className="flex-1 min-h-0 flex flex-col px-6 md:px-10 py-6 md:py-8 overflow-y-auto">
         {command && (
-          <p className="font-mono text-xs md:text-sm mb-6" style={{ color: rgba(tint, 0.6) }}>
+          <p
+            className="font-mono text-xs md:text-sm shrink-0 mb-2"
+            style={{ color: rgba(tint, 0.6) }}
+          >
             <span style={{ color: rgba(tint, 0.4) }}>$</span> {command}
             <Cursor className="ml-1" />
           </p>
         )}
-        {children}
+        <div className="flex-1 min-h-0 flex flex-col justify-center">{children}</div>
       </div>
     </div>
   );

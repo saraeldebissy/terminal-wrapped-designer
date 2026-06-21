@@ -7,7 +7,7 @@ describe('buildSlideManifest', () => {
     const ids = buildSlideManifest(fullStats).map((s) => s.id);
     expect(ids).toEqual([
       'cover', 'volume', 'countdown', 'type', 'peakHour',
-      'busiestDay', 'flag', 'secrets', 'receipt',
+      'busiestDay', 'secrets', 'flag', 'receipt',
     ]);
   });
 

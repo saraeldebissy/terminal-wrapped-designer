@@ -25,11 +25,12 @@ export function buildSlideManifest(stats: Stats): SlideEntry[] {
   if ((stats.activityByDay?.length ?? 0) > 0) {
     entries.push({ id: 'busiestDay', bg: 'violet' });
   }
-  if ((stats.parameters?.topFlags?.length ?? 0) > 0) {
-    entries.push({ id: 'flag', bg: 'ink' });
-  }
+  // Secrets (the "terminal mistake") lands before the flag reveal.
   if ((stats.secrets?.totalSecretsFound ?? 0) > 0) {
     entries.push({ id: 'secrets', bg: 'ink' });
+  }
+  if ((stats.parameters?.topFlags?.length ?? 0) > 0) {
+    entries.push({ id: 'flag', bg: 'ink' });
   }
 
   entries.push({ id: 'receipt', bg: 'ink' });
