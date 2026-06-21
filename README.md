@@ -110,3 +110,7 @@ pnpm build:cli
 ## Credit
 
 Forked and redesigned from [`thegoldenmule/terminal-wrapped`](https://github.com/thegoldenmule/terminal-wrapped). All the original analytics work is theirs; this edition is a visual and editorial reimagining.
+
+## License
+
+[GNU AGPL-3.0](./LICENSE), inherited from the original project. This is a copyleft license: any modified version — including one run as a hosted web service — must make its source available to users under the same terms.

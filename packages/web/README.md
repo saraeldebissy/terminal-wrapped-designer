@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+# terminal-wrapped-web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The React SPA for [Terminal Wrapped — Designer Edition](../../README.md). It renders the tap-through story from a `stats.json` file. In production the CLI builds this app, drops a generated `stats.json` next to it, and serves it; in development it reads the sample at `public/stats.json`.
 
-Currently, two official plugins are available:
+## Develop
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+# From the repo root
+pnpm dev:web        # Vite dev server at http://localhost:5173
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Or from this package
+pnpm dev
+pnpm build
+pnpm test           # Vitest
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The dev server reads `public/stats.json` — edit that file to preview the story against different data.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## How it fits together
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **`src/api/types.ts`** — the `Stats` type. This is the contract with the CLI; everything downstream is data-agnostic.
+- **`src/slides/manifest.ts`** — single source of truth for slide order and absent-data skipping. A slide only appears if it has data, so the story never has holes.
+- **`src/story/`** — the engine: `Story` (navigation, keyboard/click, a11y), `Slide` (background + terminal-window chrome), `ProgressBars`.
+- **`src/slides/`** — one component per slide, plus `copy.ts` (all user-facing text and the voice) and `registry.tsx` (id → component).
+- **`src/components/`** — shared pieces: `BackgroundDecor`, `TerminalChrome`, `Cursor`, and `charts/` (HourHistogram, DaySparkline, CategoryBars).
+- **`src/theme/`** — `palette.ts` (the Wrapped color tokens) and `color.ts` (the `rgba()` helper).
+
+## Notes
+
+- Built with React 19, Vite, Tailwind CSS v3, and Framer Motion (`motion/react`).
+- Faint tints are computed as `rgba()` from each slide's text color, **not** Tailwind `*-current/NN` — Tailwind v3 ignores opacity modifiers on `currentColor`.
+- Motion respects `prefers-reduced-motion` via a top-level `MotionConfig reducedMotion="user"`.
+- The web defends against partial/legacy `stats.json` with optional chaining, so a thin history still renders a valid (shorter) story.
