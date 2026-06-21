@@ -19,7 +19,7 @@ export function topCategoryPct(count: number, total: number): number {
  * All slide copy lives here so tone is tunable in one place.
  */
 export const copy = {
-  coverTitle: 'You and your shell had a year',
+  coverTitle: 'You & your shell had a year',
   coverKicker: 'Terminal Wrapped, designer edition',
   volumeKicker: 'This year you ran',
   volumeAside: (distinct: number) => `${distinct} different tools. No notes.`,

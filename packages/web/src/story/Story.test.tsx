@@ -57,7 +57,7 @@ describe('Story engine', () => {
   it('renders the cover slide first', async () => {
     render(<Story stats={fullStats} />);
     // findByText retries through the enter animation
-    expect(await screen.findByText(/you and your shell had a year/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you & your shell had a year/i)).toBeInTheDocument();
     // progressbar can be checked after the text confirms the slide is mounted
     await waitFor(() => {
       expect(progressNow()).toBe(1);
@@ -66,7 +66,7 @@ describe('Story engine', () => {
 
   it('advances on a click in the right zone', async () => {
     const { container } = render(<Story stats={fullStats} />);
-    await screen.findByText(/you and your shell had a year/i);
+    await screen.findByText(/you & your shell had a year/i);
     const main = container.querySelector('main')!;
 
     fireEvent.click(main, { clientX: 800 });
@@ -77,7 +77,7 @@ describe('Story engine', () => {
 
   it('goes back on a click in the left zone', async () => {
     const { container } = render(<Story stats={fullStats} />);
-    await screen.findByText(/you and your shell had a year/i);
+    await screen.findByText(/you & your shell had a year/i);
     const main = container.querySelector('main')!;
 
     // Advance to slide 2 — wait for its unique content
@@ -86,13 +86,13 @@ describe('Story engine', () => {
 
     // Go back — wait for cover text to re-appear (not present on slide 2)
     fireEvent.click(main, { clientX: 50 });
-    expect(await screen.findByText(/you and your shell had a year/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you & your shell had a year/i)).toBeInTheDocument();
     await waitFor(() => expect(progressNow()).toBe(1));
   });
 
   it('advances on ArrowRight and goes back on ArrowLeft', async () => {
     render(<Story stats={fullStats} />);
-    await screen.findByText(/you and your shell had a year/i);
+    await screen.findByText(/you & your shell had a year/i);
 
     // Advance — wait for slide 2 unique content
     await pressRightUntil(VOLUME_TEXT);
@@ -100,7 +100,7 @@ describe('Story engine', () => {
 
     // Go back — wait for cover text to re-appear
     fireEvent.keyDown(window, { key: 'ArrowLeft' });
-    expect(await screen.findByText(/you and your shell had a year/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you & your shell had a year/i)).toBeInTheDocument();
     await waitFor(() => expect(progressNow()).toBe(1));
   });
 
@@ -121,7 +121,7 @@ describe('Story engine', () => {
   // ---------------------------------------------------------------------------
   it('the receipt Download button is present and does NOT advance the story', async () => {
     render(<Story stats={fullStats} />);
-    await screen.findByText(/you and your shell had a year/i);
+    await screen.findByText(/you & your shell had a year/i);
 
     // Navigate through all 8 transitions, waiting for each slide's unique
     // content to confirm the DOM has mounted before firing the next event.
